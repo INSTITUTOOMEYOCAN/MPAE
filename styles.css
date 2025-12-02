@@ -1,0 +1,255 @@
+:root {
+    --color-primary: #007f7b;      /* NUEVO VERDE */
+    --color-secondary: #005f5b;    /* NUEVO VERDE OSCURO */
+    --color-accent: #00b3aa;       /* NUEVO VERDE CLARO */
+
+    --color-white: #ffffff;
+    --color-card: #f5f5f5;
+    --color-text: #3d3d3d;
+    --color-text-secondary: #4a4a4a;
+    --border-radius: 12px;
+    --shadow-sm: 0 1px 4px rgba(0,0,0,.08);
+    --transition: 0.3s cubic-bezier(0.583,0.273,0.451,0.901);
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    background: var(--color-white);
+    font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+    color: var(--color-text);
+}
+
+/* --- HEADER --- */
+
+.header {
+    background: var(--color-primary);
+    color: var(--color-white);
+    padding: 40px 0 28px 0;
+    text-align: center;
+}
+
+.header h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.7em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.header h2 {
+    font-size: 1.3em;
+    font-weight: 500;
+}
+
+/* --- BADGES --- */
+
+.badges {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+}
+
+.badge {
+    background: var(--color-accent);
+    color: var(--color-white);
+    border-radius: var(--border-radius);
+    padding: 8px 18px;
+    font-weight: 500;
+}
+
+/* --- NAV --- */
+
+nav {
+    background: var(--color-card);
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.hamburger {
+    display: none;
+    font-size: 1.8em;
+    padding: 10px 16px;
+    border: none;
+    background: none;
+    color: var(--color-secondary);
+}
+
+.nav-wrap {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px 0 10px;
+}
+
+.nav-wrap.mobile-open {
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    background: var(--color-white);
+    box-shadow: var(--shadow-sm);
+}
+
+.nav-link {
+    color: var(--color-secondary);
+    padding: 8px 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* --- SECCIONES --- */
+
+.section {
+    width: 96%;
+    max-width: 980px;
+    margin: 40px auto;
+    background: var(--color-card);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    padding: 38px 20px;
+}
+
+.section h2 {
+    font-size: 2em;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+}
+
+/* --- QUIENES SOMOS --- */
+
+.who-text {
+    font-size: 1.15em;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+}
+
+/* --- CARDS --- */
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(290px,1fr));
+    gap: 22px;
+}
+
+.dif-card {
+    background: var(--color-white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    padding: 20px;
+    display: flex;
+    gap: 14px;
+    transition: var(--transition);
+}
+
+.dif-card:hover {
+    background: var(--color-accent);
+    color: var(--color-white);
+    transform: translateY(-3px) scale(1.03);
+}
+
+.dif-title {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: var(--color-secondary);
+}
+
+.dif-desc {
+    color: var(--color-text-secondary);
+}
+
+/* --- MODALIDAD --- */
+
+.modalidad-details {
+    font-size: 1.12em;
+    color: var(--color-secondary);
+    font-weight: 500;
+}
+
+.modalidad-table {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.modal-col {
+    background: var(--color-white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    padding: 18px;
+}
+
+.modal-label {
+    font-size: 1.1em;
+    color: var(--color-primary);
+    font-weight: bold;
+}
+
+/* --- ALIANZAS --- */
+
+.alliances-section {
+    background: var(--color-card);
+    padding: 34px 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+}
+
+.alliance-card {
+    background: var(--color-white);
+    border-radius: var(--border-radius);
+    padding: 14px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+/* --- CONTACTO --- */
+
+.contact-block {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--color-secondary);
+    font-size: 1.1em;
+}
+
+.info-btn {
+    background: var(--color-primary);
+    color: var(--color-white);
+    border-radius: 32px;
+    padding: 12px 30px;
+    font-size: 1.15em;
+    text-align: center;
+    display: block;
+    margin: 20px auto 0;
+    width: fit-content;
+}
+
+/* --- ICONOS --- */
+
+.icon-graduation::before { content:"🎓"; }
+.icon-users::before { content:"👥"; }
+.icon-certificate::before { content:"📜"; }
+.icon-leaf::before { content:"🌿"; }
+.icon-brain::before { content:"🧠"; }
+.icon-heart::before { content:"💛"; }
+.icon-mindfulness::before { content:"🧘"; }
+.icon-personal::before { content:"🤝"; }
+.icon-professor::before { content:"👨‍🏫"; }
+
+/* --- RESPONSIVE --- */
+
+@media(max-width:768px){
+    .hamburger { display:block; }
+    .nav-wrap { display:none; }
+    .nav-wrap.mobile-open { display:flex; }
+}
